@@ -1,13 +1,18 @@
 import nodemailer from "nodemailer";
+import dotenv from "dotenv";
 
-export const transporter = nodemailer.createTransport({
-    service:"gmail",
+dotenv.config({
+    path: './.env'
+})
+
+const transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 465,
+    secure: true, // use TLS
     auth: {
-        user: process.env.APPLLICATION_USER_FOR_NODEMAILER,
-        pass: process.env.APPLLICATION_PASSWORD_FOR_NODEMAILER
+      user: process.env.APPLICATION_USER_FOR_NODEMAILER,
+      pass: process.env.APPLICATION_PASSWORD_FOR_NODEMAILER,
     },
-    tls:{
-        rejectUnauthorized: false,
-    },
-});
-
+  });
+  
+  export default transporter;

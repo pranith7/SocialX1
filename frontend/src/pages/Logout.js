@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -8,11 +8,17 @@ const Logout = () => {
     useEffect(() => {
         const logout = async () => {
             try {
-                await axios.post('/api/logout', {}, {
+                const response = await axios.post('http://localhost:4000/api/v1/auth/logout', {}, {
                     withCredentials: true
                 });
-                localStorage.removeItem('user');
-                navigate('/login');
+
+                if (response.status === 200) {
+                    console.log("User Logged out");
+                    localStorage.removeItem('user');
+                    navigate('/login', { replace: true });
+                } else {
+                    console.error("Logout failed:", response.data.message);
+                }
             } catch (error) {
                 console.error("Error logging out:", error);
             }
@@ -20,6 +26,8 @@ const Logout = () => {
 
         logout();
     }, [navigate]);
+
+    return null;
 };
 
 export default Logout;

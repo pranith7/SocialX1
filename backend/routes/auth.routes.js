@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { loginUser, registerUser, logoutUser } from "../controllers/auth.controller.js";
+import { loginUser, registerUser, logoutUser, verifyOTP } from "../controllers/auth.controller.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 
 const router = Router()
@@ -7,5 +7,6 @@ const router = Router()
 router.route("/register").post(registerUser);
 router.route("/login").post(loginUser);
 router.route("/logout").post(verifyJWT, logoutUser);
+router.route('/verifyotp').post(verifyOTP);
 
-export default router
+export default router;

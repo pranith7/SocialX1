@@ -251,6 +251,77 @@ button {
     -webkit-appearance: button;
 } 
 
+/* Center the form on the page */
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a4a62; /* Match the background color */
+}
+
+/* Styling the form and its elements */
+.verifyotp-form {
+    width: 100%;
+    max-width: 500px;
+    padding: 2rem;
+    background: #25282c; /* Slightly lighter than the body for contrast */
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+}
+
+/* Adjusting the form input fields */
+.verifyotp-form .form-control {
+    display: block;
+    width: 100%;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #e8e6e3; /* Light text for readability */
+    background-color: #33383d; /* Dark input background */
+    border: 1px solid #4e555b; /* Slightly lighter border for visibility */
+    border-radius: 0.375rem;
+    margin-bottom: 1rem; /* Space between form fields */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Styling the labels */
+.verifyotp-form .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #e8e6e3; /* Light text for readability */
+}
+
+/* Styling the button */
+.verifyotp-form .btn-primary {
+    --bs-btn-color: #fff;
+    --bs-btn-bg: #0d6efd;
+    --bs-btn-border-color: #0d6efd;
+    --bs-btn-hover-color: #fff;
+    --bs-btn-hover-bg: #0b5ed7;
+    --bs-btn-hover-border-color: #0a58ca;
+    --bs-btn-focus-shadow-rgb: 49,132,253;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 0.375rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* Hover effect for the submit button */
+.verifyotp-form .btn-primary:hover {
+    background-color: #0069d9; /* Slightly darker blue on hover */
+    border-color: #0062cc;
+}
+
 .btn { 
     --bs-btn-padding-x: 0.75rem; 
     --bs-btn-padding-y: 0.375rem; 

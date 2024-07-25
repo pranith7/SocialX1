@@ -19,6 +19,8 @@ app.use(cookieParser())
 // import routes
 // import userRouter from './routes/user.routes.js'
 import authRouter from './routes/auth.routes.js'
+import forgotPassRouter from './routes/forgotpass.routes.js'
+
 // import forgotPassRouter from './routes/forgotpass.routes.js'
 // import postRouter from './routes/post.routes.js'
 // import savedPostRouter from './routes/savedpost.routes.js'
@@ -26,6 +28,7 @@ import authRouter from './routes/auth.routes.js'
 
 
 app.use("/api/v1/auth", authRouter)
+app.use("/api/v1/credentials", forgotPassRouter)
 
 
 export { app }

@@ -52,7 +52,9 @@ const userSchema = new Schema(
         verified: {
             type: Boolean,
             default: false
-        }
+        },
+        resetPasswordToken: String,
+        resetPasswordExpires: Date,
     
     },
     {

@@ -50,14 +50,17 @@ const replySchema = new Schema(
 
 const postSchema = new Schema(
     {   
-        user: {
-            type: Schema.Types.ObjectId,
-            require: true,
-            ref: "Usermodel",
+        title:{
+          type: String,
+          required: true
         },
         content:{
             type: String,
-            required: true,
+            required: true
+        },
+        owner: {
+          type: Schema.Types.ObjectId,
+          ref: "Usermodel"
         },
         likes: [
             {
@@ -65,7 +68,7 @@ const postSchema = new Schema(
                 ref: "Usermodel",
             }
         ],
-        comments: [commentSchema],
+        comments: [commentSchema]
     },
     { timestamps: true}
 );

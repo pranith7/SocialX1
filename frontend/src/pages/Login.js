@@ -24,6 +24,7 @@ function Login() {
           name,
           password,
         }),
+        credentials: 'include', // Include cookies with the request
       });
 
       const result = await response.json();

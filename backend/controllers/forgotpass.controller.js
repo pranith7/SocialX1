@@ -3,7 +3,6 @@ import { asyncHandler } from "../utils/asyncHandler.js";
 import { ApiError } from "../utils/ApiError.js";
 import { ApiResponse } from "../utils/ApiResponse.js";
 import transporter  from "../utils/nodemailer.js";
-import { generateAccessAndRefreshTokens } from "./auth.controller.js";
 import dotenv from "dotenv";
 
 

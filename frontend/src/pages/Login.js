@@ -50,7 +50,7 @@ function Login() {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Login</title>
       <div className="center-container">
-        <div className="signup-form">
+        <div className="signin-form">
           <h1>Sign In</h1>
           <p>
             If you have not created an account yet, then please

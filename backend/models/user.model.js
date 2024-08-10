@@ -13,6 +13,9 @@ const userSchema = new Schema(
             trim: true,
             index: true
         },
+        displayName: {
+            type: String
+        },
         email: {
             type: String, 
             required: true, 
@@ -20,29 +23,35 @@ const userSchema = new Schema(
             lowercase: true,
             trim: true
         },
+        emailVerified: {
+            type: Boolean
+        },
         fullName: {
             type: String,
             // required: true,
             trim: true, 
             index: true
         },
-        avatar: {
+        profileImage: {
             type: String, // cloudinary url
             // required: true,
         },
         coverImage: {
             type: String, // cloudinary url
         },
+        bio:{
+            type: String
+        },
         followers: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "Usermodel",
+                ref: "Followersmodel",
             }
         ],
         following: [
             {
                 type: Schema.Types.ObjectId,
-                ref: "Usermodel",
+                ref: "Followingmodel",
             }
         ],
         password: {
@@ -53,8 +62,20 @@ const userSchema = new Schema(
             type: Boolean,
             default: false
         },
+        hasBadge: {
+            type: Boolean,
+            default: false
+        },
+        badgeRequested: {
+            type: Boolean,
+            default: false
+        },
+        dateOfBirth:{
+            type: Date
+        },
         resetPasswordToken: String,
         resetPasswordExpires: Date,
+
     
     },
     {

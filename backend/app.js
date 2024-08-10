@@ -21,13 +21,14 @@ app.use(cookieParser())
 import authRouter from './routes/auth.routes.js'
 import forgotPassRouter from './routes/forgotpass.routes.js'
 import postRouter from './routes/post.routes.js'
-// import 
+import paymentRouter from './routes/payment.route.js'
 
 
 
 app.use("/api/v1/auth", authRouter)
 app.use("/api/v1/credentials", forgotPassRouter)
 app.use("/api/v1/post", postRouter);
+app.use("/api/v1/payment",paymentRouter);
 
 
 export { app }
